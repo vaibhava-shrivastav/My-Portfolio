@@ -110,3 +110,40 @@
     margin-top: 2rem;
   }
 }
+
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem; /* Reduce horizontal padding */
+  }
+
+  .hero-text {
+    padding-right: 0;
+    max-width: 100%; /* Ensure full width */
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons a {
+    flex: 1 1 150px; /* Make buttons more touch-friendly, flexible */
+    max-width: 200px;
+    margin: 0.25rem;
+  }
+
+  .hero-image {
+    margin-top: 2rem;
+    width: 100%; /* Use full width */
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 280px; /* Max width limit for images */
+    height: auto;
+    border-radius: 2rem;
+  }
+}

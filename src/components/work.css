@@ -71,3 +71,37 @@
 .work-link:hover {
   background-color: #08c;
 }
+
+
+@media (max-width: 768px) {
+  .work-section {
+    padding: 2rem 1.5rem; /* reduce horizontal padding */
+  }
+
+  .work-grid {
+    flex-direction: column; /* stack cards vertically */
+    gap: 1rem;
+  }
+
+  .work-card {
+    flex: 1 1 100%;  /* full width cards */
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .work-title {
+    font-size: 1rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .work-link {
+    font-size: 1rem;
+    padding: 0.25rem 0.4rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}

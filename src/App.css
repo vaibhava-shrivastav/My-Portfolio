@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent anchor target from hiding behind fixed header */
+[id] {
+  scroll-margin-top: 100px; /* Adjust if header height changes */
+}
 
 /* Body styling */
 body {
@@ -14,27 +23,31 @@ body {
   line-height: 1.6;
 }
 
-/* Container for content */
+/* Global container */
 .container {
-  max-width: 1600px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem 0;
 }
 
-/* Hero section styling */
+/* Hero section */
 .hero {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 4rem 2rem;
+  justify-content: center;
+  padding: 3rem 1rem;
+  gap: 2rem;
 }
 
 .hero-text {
+  text-align: center;
   max-width: 600px;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -44,9 +57,12 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Buttons */
 .hero-buttons {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+  align-items: center;
 }
 
 .hero-buttons a {
@@ -54,7 +70,10 @@ body {
   border-radius: 999px;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
 }
 
 .btn-primary {
@@ -76,20 +95,27 @@ body {
   background-color: #333;
 }
 
-/* Responsive image */
+/* Hero Image */
 .hero-image img {
-  max-width: 300px;
+  max-width: 100%;
+  height: auto;
   border-radius: 2rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Media Queries for Tablets and Larger Screens */
+@media (min-width: 768px) {
   .hero {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
 
-  .hero-image {
-    margin-top: 2rem;
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .hero-buttons a {
+    width: auto;
   }
 }
