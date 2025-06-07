@@ -1,0 +1,76 @@
+.intro-container {
+
+  padding: 3rem 15rem;
+  color: #fff;
+  background-color: #0f0f0f;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.intro-box {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.intro-stats {
+  display: flex;
+  gap: 3rem;
+  font-size: 1.2rem;
+}
+
+.intro-stats div {
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+.tools-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tools-subtitle {
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.tool-card {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #2c2c2c;
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.05);
+}
+
+.tool-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tool-desc {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.tool-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+}
