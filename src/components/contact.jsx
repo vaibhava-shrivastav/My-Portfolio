@@ -11,7 +11,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://my-portfolio-alpha-fawn-78.vercel.app/api/contact', {
+      const res = await fetch('https://my-portfolio-alpha-fawn-78.vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
