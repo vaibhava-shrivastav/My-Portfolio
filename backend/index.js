@@ -5,28 +5,28 @@ require('dotenv').config();
 
 const app = express();
 
-// ✅ CORS for all origins (or restrict if needed)
+// ✅ Correct CORS setup
 app.use(cors());
-app.options('*', cors());
+app.options('*', cors());  // handles preflight OPTIONS request
 
 app.use(express.json());
 
 // ✅ MongoDB model
 const Contact = require('./models/Contact');
 
-// ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("✅ MongoDB connected"))
-.catch(err => console.error("❌ MongoDB connection error:", err));
+// ✅ MongoDB connection (guard this to avoid reconnecting on every call in serverless)
+if (!mongoose.connection.readyState) {
+  mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(() => console.log("✅ MongoDB connected"))
+    .catch(err => console.error("❌ MongoDB connection error:", err));
+}
 
-// ✅ POST /api/contact
+// ✅ API route
 app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
-    console.log("📥 Contact form received:", req.body);
     const contact = new Contact({ name, email, message });
     await contact.save();
     res.status(201).json({ message: "Message saved successfully!" });
@@ -36,5 +36,5 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// ✅ Export the app (no listen)
+// ✅ Export app for Vercel
 module.exports = app;
