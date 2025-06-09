@@ -1,5 +1,5 @@
 import React from "react";
-import "./Intro.css";
+import "./intro.css";
 
 const tools = [
   { name: "Java", desc: "Programming Language", icon: "/images/java-icon.svg" },
