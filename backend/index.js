@@ -4,7 +4,14 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+// ✅ Fix CORS to allow frontend origin
+app.use(cors({
+  origin: 'https://vaibhava-portfolio.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
+
 app.use(express.json());
 
 const Contact = require('./models/Contact');
