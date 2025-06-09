@@ -1,8 +1,8 @@
 import Header from "./components/header";
 import HeroSection from "./components/HeroSection";
-import Intro from "./components/Intro";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
+import Intro from "./components/intro";
+import Work from "./components/work";
+import Contact from "./components/contact";
 
 function App() {
   return (
