@@ -1,8 +1,8 @@
 import Header from "./components/header";
 import HeroSection from "./components/HeroSection";
-import Intro from "./components/intro";
-import Contact from "./components/contact";
-import Work from "./components/work";
+import Intro from "./components/Intro";
+import Work from "./components/Work";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -15,12 +15,11 @@ function App() {
         <Intro />
       </div>
       <div id="work">
-        <Work/>
+        <Work />
       </div>
       <div id="contact">
         <Contact />
       </div>
-
     </>
   );
 }

@@ -27,11 +27,12 @@ export default function Intro() {
           functional digital experiences. With expertise in React, CSS, MongoDB,
           Java, Python, JavaScript, and Express.js, I build projects that solve
           problems and delight users. Take a look around to see my work, skills,
-          and the stories behind my projects. Let’s create something amazing
-          together!<br></br><br /> 🎓 Education Bachelor of Technology (B.Tech) in Computer
-          Science and Engineering<br />  GLA University, Mathura <br /> Expected Graduation:
-          2028<br />  Currently in 2nd year, focusing on full-stack development, cloud
-          computing, DevOps, and data structures.
+          behind my projects. <br></br>
+          <br /> 🎓 Education Bachelor of Technology (B.Tech) in Computer
+          Science and Engineering
+          <br /> GLA University, Mathura <br /> Expected Graduation: 2028
+          <br /> Currently in 2nd year, focusing on full-stack development,
+          cloud computing, DevOps, and data structures.
         </p>
         <div className="intro-stats">
           <div>

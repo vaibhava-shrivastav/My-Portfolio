@@ -1,24 +1,32 @@
-/* Header Container */
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fixed Header Container */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 10rem;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #fff;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Logo */
-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Navigation Links */
+/* Navigation */
 header nav {
   display: flex;
   gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 header nav a {
@@ -26,52 +34,52 @@ header nav a {
   border-radius: 999px;
   text-decoration: none;
   color: white;
+  font-size: 1rem;
   transition: background-color 0.3s, color 0.3s;
 }
 
-header nav a.active {
-  background-color: white;
-  color: black;
-  font-weight: 500;
-}
-
+header nav a.active,
 header nav a:hover {
   background-color: white;
   color: black;
+  font-weight: 600;
 }
 
 /* Contact Button */
-header .contact-btn {
+header div > a.contact-btn {
   padding: 0.5rem 1rem;
   border-radius: 999px;
   background-color: white;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.1s;
+  transition: background-color 0.2s;
 }
 
-header .contact-btn:hover {
+header div > a.contact-btn.active,
+header div > a.contact-btn:hover {
   background-color: #e0e0e0;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 1rem 2rem;
-    gap: 1rem;
   }
 
   header nav {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.75rem;
   }
 
   header nav a,
-  header .contact-btn {
-    width: 100%;
-    text-align: center;
+  header div > a.contact-btn {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
   }
+}
+
+/* Body padding to avoid content hidden behind fixed header */
+body {
+  padding-top: 70px; /* Adjust if header height changes */
 }

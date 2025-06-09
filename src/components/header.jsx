@@ -1,32 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 
 const Header = () => {
-  return (
-    <header className="flex justify-between items-center px-8 py-4 bg-black text-white">
-      {/* Logo */}
-      <div className="text-2xl font-bold cursor-pointer">
-        <span className="text-white">VAIBHAVA</span>
-      </div>
+  const [activeSection, setActiveSection] = useState("home");
 
-      {/* Navigation Menu */}
-      <nav className="flex gap-4">
-        <a href="#home" className="px-4 py-2 rounded-full bg-white text-black font-medium">
+  useEffect(() => {
+    const sections = ["home", "about", "work", "contact"];
+
+    const handleScroll = () => {
+      let current = "home";
+      const offsetThreshold = 150;
+
+      for (let id of sections) {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= offsetThreshold && rect.bottom > offsetThreshold) {
+            current = id;
+            break;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initial set
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header>
+      <nav>
+        <a href="#home" className={activeSection === "home" ? "active" : ""}>
           Home
         </a>
-        <a href="#about" className="px-4 py-2 rounded-full hover:bg-white hover:text-black transition">
+        <a href="#about" className={activeSection === "about" ? "active" : ""}>
           About
         </a>
-        <a href="#work" className="px-4 py-2 rounded-full hover:bg-white hover:text-black transition">
+        <a href="#work" className={activeSection === "work" ? "active" : ""}>
           Work
         </a>
       </nav>
-
-      {/* Contact Button */}
       <div>
         <a
           href="#contact"
-          className="px-4 py-2 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+          className={`contact-btn ${activeSection === "contact" ? "active" : ""}`}
         >
           Contact Me
         </a>
