@@ -22,17 +22,10 @@ export default function Intro() {
     <div className="intro-container">
       <div className="intro-box">
         <p className="intro-text">
-          Welcome! Hi, I’m Vaibhava Kumar Shrivastav I’m a passionate Software
-          Developer and Web Developer who loves turning ideas into beautiful and
-          functional digital experiences. With expertise in React, CSS, MongoDB,
-          Java, Python, JavaScript, and Express.js, I build projects that solve
-          problems and delight users. Take a look around to see my work, skills,
-          behind my projects. <br></br>
-          <br /> 🎓 Education Bachelor of Technology (B.Tech) in Computer
-          Science and Engineering
-          <br /> GLA University, Mathura <br /> Expected Graduation: 2028
-          <br /> Currently in 2nd year, focusing on full-stack development,
-          cloud computing, DevOps, and data structures.
+          Welcome! Hi, I’m Vaibhava Kumar Shrivastav, a second-year B.Tech
+          student in Computer Science and Engineering at GLA University,
+          Mathura. I’m expected to graduate in 2028 and currently focusing on
+          full-stack development, cloud computing, DevOps, and data structures.
         </p>
         <div className="intro-stats">
           <div>
