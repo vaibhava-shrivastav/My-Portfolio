@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 const MONGO_URI = process.env.MONGO_URI;
 
 if (!MONGO_URI) {
-  throw new Error('❌ Please define the MONGO_URI in your .env file');
+  throw new Error('❌ MONGO_URI is not defined in .env');
 }
 
 let cached = global.mongoose;

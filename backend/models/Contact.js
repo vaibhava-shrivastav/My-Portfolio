@@ -1,25 +1,21 @@
-const mongoose = require('mongoose');
+// models/Contact.js
 
-const contactSchema = new mongoose.Schema({
+import mongoose from 'mongoose';
+
+const ContactSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    trim: true
+    required: [true, "Name is required"],
   },
   email: {
     type: String,
-    required: true,
-    trim: true
+    required: [true, "Email is required"],
   },
   message: {
     type: String,
-    required: true,
-    trim: true
+    required: [true, "Message is required"],
   },
-  date: {
-    type: Date,
-    default: Date.now
-  }
-});
+}, { timestamps: true });
 
-module.exports = mongoose.model('Contact', contactSchema);
+// Prevent model overwrite in development
+export default mongoose.models.Contact || mongoose.model('Contact', ContactSchema);
