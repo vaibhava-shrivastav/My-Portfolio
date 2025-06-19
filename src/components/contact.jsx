@@ -15,7 +15,7 @@ export default function Contact() {
     setLoading(true);
 
     const serviceID = 'service_e7h9o4s';
-    const templateID = 'GtrOpbfFGGMv9Fguo';
+    const templateID = 'template_fzdr1ar';
     const publicKey = 'GtrOpbfFGGMv9Fguo';
 
     emailjs.send(serviceID, templateID, form, publicKey)
