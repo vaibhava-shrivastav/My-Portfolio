@@ -11,24 +11,31 @@ export default function Contact() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    const serviceID = 'service_e7h9o4s';
-    const templateID = 'template_fzdr1ar';
-    const publicKey = 'GtrOpbfFGGMv9Fguo';
+  const serviceID = 'service_e7h9o4s';
+  const templateID = 'template_fzdr1ar';
+  const publicKey = 'AgWIi18NIgOvp2mfp';
 
-    emailjs.send(serviceID, templateID, form, publicKey)
-      .then(() => {
-        alert('✅ Message sent!');
-        setForm({ name: '', email: '', message: '' });
-        setLoading(false);
-      }, (error) => {
-        console.error('Failed to send message:', error);
-        alert('❌ Failed to send message. Try again later.');
-        setLoading(false);
-      });
+  const templateParams = {
+    name: form.name,
+    email: form.email,
+    message: form.message
   };
+
+  emailjs.send(serviceID, templateID, templateParams, publicKey)
+    .then(() => {
+      alert('✅ Message sent!');
+      setForm({ name: '', email: '', message: '' });
+      setLoading(false);
+    }, (error) => {
+      console.error('❌ Failed to send message:', error);
+      alert('❌ Failed to send message. Try again later.');
+      setLoading(false);
+    });
+};
+
 
   return (
     <div className="contact-section">
