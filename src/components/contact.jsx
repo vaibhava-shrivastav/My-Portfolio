@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
 import './contact.css';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+    const serviceID = 'service_e7h9o4s';
+    const templateID = 'GtrOpbfFGGMv9Fguo';
+    const publicKey = 'GtrOpbfFGGMv9Fguo';
+
+    emailjs.send(serviceID, templateID, form, publicKey)
+      .then(() => {
+        alert('✅ Message sent!');
+        setForm({ name: '', email: '', message: '' });
+        setLoading(false);
+      }, (error) => {
+        console.error('Failed to send message:', error);
+        alert('❌ Failed to send message. Try again later.');
+        setLoading(false);
       });
-
-      const data = await res.json();
-      alert(data.message || '✅ Message sent!');
-      setForm({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Error sending message:', error);
-      alert('❌ Failed to send message. Try again later.');
-    }
   };
 
   return (
@@ -50,6 +53,7 @@ export default function Contact() {
               value={form.name}
               onChange={handleChange}
               required
+              disabled={loading}
             />
             <input
               type="email"
@@ -58,6 +62,7 @@ export default function Contact() {
               value={form.email}
               onChange={handleChange}
               required
+              disabled={loading}
             />
           </div>
           <textarea
@@ -66,8 +71,9 @@ export default function Contact() {
             value={form.message}
             onChange={handleChange}
             required
+            disabled={loading}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Submit'}</button>
         </form>
       </div>
 
