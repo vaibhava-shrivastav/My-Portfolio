@@ -10,31 +10,29 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await fetch('https://my-portfolio-alpha-fawn-78.vercel.app/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
+
       const data = await res.json();
-      alert(data.message || 'Message sent!');
-      setForm({ name: '', email: '', message: '' }); // clear form
+      alert(data.message || '✅ Message sent!');
+      setForm({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('❌ Failed to send message. Try again.');
+      alert('❌ Failed to send message. Try again later.');
     }
   };
 
   return (
     <div className="contact-section">
       <div className="contact-container">
-        {/* Left Panel */}
         <div className="contact-info">
           <h2>Contact me for <br /> collaboration</h2>
-          <p>
-            Reach out today to discuss your project needs and start collaborating on
-            something amazing!
-          </p>
+          <p>Reach out today to discuss your project needs and start collaborating on something amazing!</p>
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/vaibhavakumarshrivastav"><i className="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/vaibhava-shrivastav"><i className="fab fa-github"></i></a>
@@ -43,7 +41,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Panel - Form */}
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
@@ -74,12 +71,10 @@ export default function Contact() {
         </form>
       </div>
 
-      {/* CTA Section */}
       <div className="cta">
         <h1>Let's work <br /> together today!</h1>
       </div>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="footer-grid">
           <div>
@@ -101,9 +96,7 @@ export default function Contact() {
             </ul>
           </div>
         </div>
-        <div className="footer-bottom">
-          © 2025 vaibhavakumarshrivastav
-        </div>
+        <div className="footer-bottom">© 2025 vaibhavakumarshrivastav</div>
       </footer>
     </div>
   );
