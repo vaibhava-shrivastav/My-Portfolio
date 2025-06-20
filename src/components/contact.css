@@ -1,7 +1,7 @@
 .contact-section {
   background-color: #0f0f0f;
   color: #fff;
-  padding: 4rem 15rem;
+  padding: 4rem 10%;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -15,17 +15,18 @@
 
 .contact-info {
   flex: 1;
-  min-width: 250px;
+  min-width: 280px;
 }
 
 .contact-info h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
 .contact-info p {
   color: #aaa;
   margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .social-icons a {
@@ -36,7 +37,7 @@
   background: #1a1a1a;
   padding: 0.6rem;
   border-radius: 8px;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -53,6 +54,7 @@
 
 .form-group {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
 }
 
@@ -63,17 +65,21 @@
   border: none;
   border-radius: 8px;
   color: #fff;
+  font-size: 1rem;
 }
 
 textarea {
-  height: 100px;
+  width: 100%;               /* ✅ Make it match input field width */
+  height: 120px;
   padding: 0.75rem;
   background-color: #1e1e1e;
   border: none;
   border-radius: 8px;
   color: #fff;
   resize: none;
+  font-size: 1rem;
 }
+
 
 button[type="submit"] {
   padding: 0.75rem;
@@ -83,7 +89,8 @@ button[type="submit"] {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
 button[type="submit"]:hover {
@@ -113,7 +120,8 @@ button[type="submit"]:hover {
 
 .footer {
   border-top: 1px solid #222;
-  padding-top: 2rem ;
+  padding-top: 2rem;
+  background-color: #0f0f0f;
 }
 
 .footer-grid {
@@ -121,7 +129,7 @@ button[type="submit"]:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 1rem 15rem;
+  padding: 1rem 10%;
   margin-bottom: 1rem;
 }
 
@@ -139,30 +147,40 @@ button[type="submit"]:hover {
   margin-bottom: 0.5rem;
   color: #aaa;
   cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-grid li:hover {
+  color: #fff;
 }
 
 .footer-bottom {
   text-align: center;
   color: #666;
   font-size: 0.875rem;
+  padding-bottom: 2rem;
 }
 
-/* Existing styles here... */
+/* ------------------------ Responsive ------------------------ */
+
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 4rem 5%;
+  }
+
+  .footer-grid {
+    padding: 1rem 5%;
+  }
+}
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
   }
 
   .contact-container {
     flex-direction: column;
     gap: 2rem;
-  }
-
-  .contact-info,
-  .contact-form {
-    min-width: 100%;
-    flex: none;
   }
 
   .form-group {
@@ -183,7 +201,7 @@ button[type="submit"]:hover {
 
 @media (max-width: 400px) {
   .contact-info h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .cta h1 {

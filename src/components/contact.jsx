@@ -1,41 +1,13 @@
 import React, { useState } from 'react';
 import './contact.css';
-import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleSubmit = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 1500); // simulate a short loading feedback
   };
-
-  const handleSubmit = (e) => {
-  e.preventDefault();
-  setLoading(true);
-
-  const serviceID = 'service_e7h9o4s';
-  const templateID = 'template_fzdr1ar';
-  const publicKey = 'AgWIi18NIgOvp2mfp';
-
-  const templateParams = {
-    name: form.name,
-    email: form.email,
-    message: form.message
-  };
-
-  emailjs.send(serviceID, templateID, templateParams, publicKey)
-    .then(() => {
-      alert('✅ Message sent!');
-      setForm({ name: '', email: '', message: '' });
-      setLoading(false);
-    }, (error) => {
-      console.error('❌ Failed to send message:', error);
-      alert('❌ Failed to send message. Try again later.');
-      setLoading(false);
-    });
-};
-
 
   return (
     <div className="contact-section">
@@ -51,36 +23,49 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form
+          className="contact-form"
+          action="https://getform.io/f/ayvymppb"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
+          {/* bot protection */}
+          <input type="hidden" name="_gotcha" style={{ display: 'none' }} />
+
+          {/* ✅ Each input has a unique name */}
           <div className="form-group">
             <input
               type="text"
-              name="name"
-              placeholder="Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              disabled={loading}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={form.email}
-              onChange={handleChange}
+              name="user_name"
+              placeholder="Your Name"
               required
               disabled={loading}
             />
           </div>
-          <textarea
-            name="message"
-            placeholder="Message"
-            value={form.message}
-            onChange={handleChange}
-            required
-            disabled={loading}
-          />
-          <button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Submit'}</button>
+
+          <div className="form-group">
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+              disabled={loading}
+            />
+          </div>
+
+          <div className="form-group">
+            <textarea
+              name="user_message"
+              rows="5"
+              placeholder="Your Message"
+              required
+              disabled={loading}
+            ></textarea>
+          </div>
+
+          <button type="submit" disabled={loading}>
+            {loading ? 'Sending...' : 'Submit'}
+          </button>
         </form>
       </div>
 
@@ -95,7 +80,7 @@ export default function Contact() {
             <ul>
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="work">Work</a></li>
+              <li><a href="#work">Work</a></li>
               <li><a href="#contact">Contact me</a></li>
             </ul>
           </div>
