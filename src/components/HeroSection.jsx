@@ -18,7 +18,7 @@ const HeroSection = () => {
 
         <div className="hero-buttons">
           <a href="#contact" className="btn-primary">Contact me here →</a>
-          <a href="/cv.pdf" className="btn-secondary" download>Download CV ⬇</a>
+          <a href="/VAIBHAVA-RESUME.pdf" className="btn-secondary" download>Download CV ⬇</a>
 
           <div className="social-icons">
             <a href="https://www.linkedin.com/in/vaibhavakumarshrivastav" target="_blank" rel="noopener noreferrer">
