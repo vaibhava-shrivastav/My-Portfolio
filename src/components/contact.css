@@ -5,6 +5,11 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+body.light-mode .contact-section {
+  background-color: #f5f7fa;
+  color: #111;
+}
+
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -29,6 +34,10 @@
   line-height: 1.6;
 }
 
+body.light-mode .contact-info p {
+  color: #444;
+}
+
 .social-icons a {
   margin-right: 0.75rem;
   color: #fff;
@@ -42,6 +51,15 @@
 
 .social-icons a:hover {
   background: #2c2c2c;
+}
+
+body.light-mode .social-icons a {
+  background: black;
+  color: #222;
+}
+
+body.light-mode .social-icons a:hover {
+  background: #d0d0d0;
 }
 
 .contact-form {
@@ -68,8 +86,14 @@
   font-size: 1rem;
 }
 
+body.light-mode .form-group input {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
 textarea {
-  width: 100%;               /* ✅ Make it match input field width */
+  width: 100%;
   height: 120px;
   padding: 0.75rem;
   background-color: #1e1e1e;
@@ -80,6 +104,11 @@ textarea {
   font-size: 1rem;
 }
 
+body.light-mode textarea {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+}
 
 button[type="submit"] {
   padding: 0.75rem;
@@ -124,6 +153,11 @@ button[type="submit"]:hover {
   background-color: #0C1220;
 }
 
+body.light-mode .footer {
+  background-color: #f5f7fa;
+  border-top: 1px solid #ccc;
+}
+
 .footer-grid {
   display: flex;
   justify-content: space-between;
@@ -154,11 +188,23 @@ button[type="submit"]:hover {
   color: #fff;
 }
 
+body.light-mode .footer-grid li {
+  color: #444;
+}
+
+body.light-mode .footer-grid li:hover {
+  color: #000;
+}
+
 .footer-bottom {
   text-align: center;
   color: #666;
   font-size: 0.875rem;
   padding-bottom: 2rem;
+}
+
+body.light-mode .footer-bottom {
+  color: #666;
 }
 
 /* ------------------------ Responsive ------------------------ */

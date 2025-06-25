@@ -1,3 +1,4 @@
+/* Default (Dark Mode) */
 .hero {
   display: flex;
   justify-content: center;
@@ -9,10 +10,27 @@
     #2e2f55 40%,
     #0c1220 69%
   );
-
-  
   color: #ffffff;
   text-align: center;
+}
+
+/* Light Mode Override */
+body.light-mode .hero {
+  background: radial-gradient(
+    circle at top center,
+    #fdf6ff 5%,
+    #e0e7ff 40%,
+    #ffffff 100%
+  );
+  color: #111111;
+}
+
+body.light-mode .hero-heading strong {
+  color: #000000;
+}
+
+body.light-mode .hero-heading em {
+  color: #0077cc;
 }
 
 .hero-content {
@@ -89,6 +107,16 @@
   background-color: #333;
 }
 
+/* Light mode overrides for buttons */
+body.light-mode .btn-secondary {
+  border-color: #999;
+  color: #111;
+}
+
+body.light-mode .btn-secondary:hover {
+  background-color: #ddd;
+}
+
 .social-icons {
   display: flex;
   gap: 1rem;
@@ -102,7 +130,15 @@
 }
 
 .social-icons i:hover {
-  color: #00bfff;
+  color: #3e18e7;
+}
+
+body.light-mode .social-icons i {
+  color:white;
+}
+
+body.light-mode .social-icons i:hover {
+  color: #0077cc;
 }
 
 @media (max-width: 768px) {

@@ -5,6 +5,11 @@
   font-family: "Segoe UI", sans-serif;
 }
 
+body.light-mode .intro-container {
+  background: #f5f7fa;
+  color: #111;
+}
+
 .intro-box {
   background-color: rgba(12, 18, 32, 0.8);
   backdrop-filter: blur(100000000000px);
@@ -12,6 +17,11 @@
   border-radius: 1rem;
   margin-bottom: 3rem;
   box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .intro-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .intro-text {
@@ -31,6 +41,10 @@
   font-weight: bold;
 }
 
+body.light-mode .intro-stats div {
+  color: #2563eb; /* Lighter blue for light mode */
+}
+
 .tools-section h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -39,6 +53,10 @@
 .tools-subtitle {
   color: #aaa;
   margin-bottom: 2rem;
+}
+
+body.light-mode .tools-subtitle {
+  color: #555;
 }
 
 .tools-grid {
@@ -55,6 +73,11 @@
   transition: transform 0.2s ease;
 }
 
+body.light-mode .tool-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 0.5px solid #ccc;
+}
+
 .tool-card:hover {
   transform: scale(1.05);
 }
@@ -69,6 +92,10 @@
   color: #888;
 }
 
+body.light-mode .tool-desc {
+  color: #666;
+}
+
 .tool-icon {
   width: 32px;
   height: 32px;
@@ -77,7 +104,7 @@
 
 @media (max-width: 768px) {
   .intro-container {
-    padding: 2rem 1.5rem; /* Reduce horizontal padding */
+    padding: 2rem 1.5rem;
   }
 
   .intro-stats {

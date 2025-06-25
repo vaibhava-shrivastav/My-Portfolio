@@ -22,6 +22,12 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+body.light-mode header {
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+  color: #111;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* Navigation */
 header nav {
   display: flex;
@@ -38,11 +44,21 @@ header nav a {
   transition: background-color 0.3s, color 0.3s;
 }
 
+body.light-mode header nav a {
+  color: #111;
+}
+
 header nav a.active,
 header nav a:hover {
   background-color: white;
   color: black;
   font-weight: 600;
+}
+
+body.light-mode header nav a.active,
+body.light-mode header nav a:hover {
+  background-color: #111;
+  color: white;
 }
 
 /* Contact Button */
@@ -60,6 +76,16 @@ header div > a.contact-btn.active,
 header div > a.contact-btn:hover {
   background-color: #e0e0e0;
   color: black;
+}
+
+body.light-mode header div > a.contact-btn {
+  background-color: #f0f0f0;
+  color: #111;
+}
+
+body.light-mode header div > a.contact-btn:hover {
+  background-color: #111;
+  color: white;
 }
 
 /* Responsive */
@@ -80,6 +106,12 @@ header div > a.contact-btn:hover {
     padding: 0.4rem 0.8rem;
     background-color: #0c1220;
     color: aliceblue;
+  }
+
+  body.light-mode header nav a,
+  body.light-mode header div > a.contact-btn {
+    background-color: #f0f0f0;
+    color: #111;
   }
 }
 

@@ -3,10 +3,14 @@ import HeroSection from "./components/HeroSection";
 import Intro from "./components/intro";
 import Work from "./components/work";
 import Contact from "./components/contact";
+import ThemeToggleButton from "./components/ThemeToggleButton";
+
 
 function App() {
   return (
     <>
+      <ThemeToggleButton />
+      
       <div id="home">
         <Header />
         <HeroSection />
