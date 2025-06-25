@@ -1,5 +1,5 @@
 .contact-section {
-  background-color: #0f0f0f;
+  background-color: #0C1220;
   color: #fff;
   padding: 4rem 10%;
   font-family: 'Segoe UI', sans-serif;
@@ -121,7 +121,7 @@ button[type="submit"]:hover {
 .footer {
   border-top: 1px solid #222;
   padding-top: 2rem;
-  background-color: #0f0f0f;
+  background-color: #0C1220;
 }
 
 .footer-grid {

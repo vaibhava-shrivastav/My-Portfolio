@@ -13,13 +13,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* For WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c1220; /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e2f55; /* Muted indigo thumb */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5e3a60; /* Accent on hover */
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  padding: 0 1rem;
+  padding: 0rem;
   min-width: 320px;
   min-height: 100vh;
   font-family: inherit;

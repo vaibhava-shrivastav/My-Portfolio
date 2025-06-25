@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 10rem;
-  background-color: #000;
+  background: linear-gradient(to bottom, #151a2e 0%, #0c1220 100%);
   color: #fff;
   flex-wrap: wrap;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -49,8 +49,8 @@ header nav a:hover {
 header div > a.contact-btn {
   padding: 0.5rem 1rem;
   border-radius: 999px;
-  background-color: white;
-  color: black;
+  background-color: #0c1220;
+  color: aliceblue;
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.2s;
@@ -59,6 +59,7 @@ header div > a.contact-btn {
 header div > a.contact-btn.active,
 header div > a.contact-btn:hover {
   background-color: #e0e0e0;
+  color: black;
 }
 
 /* Responsive */
@@ -69,13 +70,16 @@ header div > a.contact-btn:hover {
 
   header nav {
     justify-content: center;
-    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    gap: 2.75rem;
   }
 
   header nav a,
   header div > a.contact-btn {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
+    background-color: #0c1220;
+    color: aliceblue;
   }
 }
 

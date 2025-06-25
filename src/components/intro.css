@@ -1,17 +1,17 @@
 .intro-container {
-
   padding: 3rem 15rem;
   color: #fff;
-  background-color: #0f0f0f;
-  font-family: 'Segoe UI', sans-serif;
+  background: #0c1220;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .intro-box {
-  background-color: #1a1a1a;
+  background-color: rgba(12, 18, 32, 0.8);
+  backdrop-filter: blur(100000000000px);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
 }
 
 .intro-text {
@@ -48,10 +48,10 @@
 }
 
 .tool-card {
-  background-color: #1e1e1e;
+  background-color: rgba(6, 12, 27, 0.8);
   padding: 1rem;
   border-radius: 0.75rem;
-  border: 1px solid #2c2c2c;
+  border: 0.5px solid #2c2c2c;
   transition: transform 0.2s ease;
 }
 
@@ -74,7 +74,6 @@
   height: 32px;
   margin-bottom: 0.5rem;
 }
-
 
 @media (max-width: 768px) {
   .intro-container {

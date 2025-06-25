@@ -1,6 +1,6 @@
 .work-section {
   padding: 2rem 15rem;
-  background-color: #121212;
+  background-color: #0C1220;
   color: #fff;
 }
 
@@ -16,7 +16,8 @@
 }
 
 .work-card {
-  background-color: #1e1e1e;
+  background-color: rgba(12, 18, 32, 0.8);
+  border: 0.5px solid #2c2c2c;
   border-radius: 12px;
   padding: 1rem;
   position: relative;
@@ -57,10 +58,10 @@
 
 .work-link {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  right: 0.3rem;
+  bottom: 0.85rem;
   background-color: #0af;
-  padding: 0.3rem 0.5rem;
+  padding: 0.1rem 0.3rem;
   border-radius: 8px;
   text-decoration: none;
   font-size: 1.2rem;
